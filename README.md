@@ -7,6 +7,10 @@ CodeMirror 6 + Tauri 2 기반의 가벼운 데스크톱 메모장입니다. [D09
 요청ID 기반 종료 코디네이터 등)을 의도적으로 생략한 경량 버전입니다. 자세한 범위는 [트임 내역](#스펙-대비-트임-내역)을
 참고하세요.
 
+**[⬇ NextPad v0.1.0 다운로드 (.dmg, macOS Apple Silicon)](https://github.com/junsang-dong/goorm-261012-next-pad/releases/download/v0.1.0/NextPad_0.1.0_aarch64.dmg)**
+— 설치 방법과 전체 릴리스 노트는 [Releases 페이지](https://github.com/junsang-dong/goorm-261012-next-pad/releases/tag/v0.1.0)에서 확인하세요.
+서명·공증되지 않은 빌드라 첫 실행 시 macOS 경고가 뜰 수 있습니다 (Releases 페이지에 우회 방법 안내).
+
 ## 지원 환경 및 버전
 
 - **대상 OS**: macOS (Apple Silicon). Windows는 검증되지 않았습니다.
