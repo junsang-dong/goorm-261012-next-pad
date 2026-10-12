@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--np-ui-font);
+  font-size: 13px;
+  color: var(--np-text);
+  background: var(--np-bg);
+}
+
+button {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--np-text);
+  background: var(--np-editor-bg);
+  border: 1px solid var(--np-border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--np-accent);
+}
+
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--np-accent);
+  outline-offset: 1px;
+}
+
+.np-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--np-bg);
+}
+
+/* Toolbar */
+.np-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--np-border);
+  background: var(--np-bg);
+  flex-shrink: 0;
+}
+
+.np-toolbar-spacer {
+  flex: 1;
+}
+
+/* Tab bar */
+.np-tabbar {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--np-border);
+  background: var(--np-bg);
+  flex-shrink: 0;
+}
+
+.np-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-right: 1px solid var(--np-border);
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--np-muted);
+}
+
+.np-tab-active {
+  background: var(--np-editor-bg);
+  color: var(--np-text);
+  border-bottom: 2px solid var(--np-accent);
+}
+
+.np-tab-title {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.np-tab-dirty {
+  color: var(--np-accent);
+  font-size: 8px;
+}
+
+.np-tab-close {
+  border: none;
+  background: transparent;
+  padding: 2px 4px;
+  color: inherit;
+  font-size: 11px;
+  border-radius: 4px;
+}
+
+.np-tab-close:hover {
+  background: var(--np-border);
+}
+
+/* Editor pane */
+.np-editor-pane {
+  flex: 1;
+  min-height: 0;
+  background: var(--np-editor-bg);
+}
+
+.np-editor-pane .cm-editor {
+  height: 100%;
+}
+
+.np-editor-pane .cm-scroller {
+  overflow: auto;
+}
+
+/* Status bar */
+.np-statusbar {
+  display: flex;
+  gap: 16px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: var(--np-muted);
+  border-top: 1px solid var(--np-border);
+  background: var(--np-bg);
+  flex-shrink: 0;
+}
+
+/* Empty state */
+.np-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--np-muted);
+}
+
+/* Modal */
+.np-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.np-modal {
+  background: var(--np-editor-bg);
+  color: var(--np-text);
+  border-radius: 10px;
+  padding: 18px;
+  min-width: 300px;
+  max-width: 420px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.np-modal-title {
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.np-modal-list {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  max-height: 140px;
+  overflow-y: auto;
+  font-size: 12px;
+}
+
+.np-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.np-primary {
+  background: var(--np-accent);
+  color: #ffffff;
+  border-color: var(--np-accent);
+}
+
+.np-settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--np-border);
+}
+
+.np-settings-row:last-of-type {
+  border-bottom: none;
+}
+
+/* Search panel (custom CM6 panel) */
+.np-search-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px;
+  background: var(--np-bg);
+  border-bottom: 1px solid var(--np-border);
+}
+
+.np-search-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.np-search-input {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 6px;
+  border: 1px solid var(--np-border);
+  border-radius: 4px;
+  background: var(--np-editor-bg);
+  color: var(--np-text);
+  min-width: 180px;
+}
+
+.np-search-btn {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.np-search-case-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--np-muted);
+}
+
+.np-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #18212f;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  z-index: 200;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
